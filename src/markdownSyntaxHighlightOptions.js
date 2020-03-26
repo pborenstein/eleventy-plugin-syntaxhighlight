@@ -32,10 +32,17 @@ module.exports = function(options = {}) {
       html = Prism.highlight(str, PrismLoader(language), language);
     }
 
-    let wickedPattern=/<\/span>\n<\/span>/g
-    let goodReplacement='</span></span>\n'
+        //  Prism's markdown highlighter renders tables
+        //  with a newline before the end of the corresponding
+        //  markdown line. It's hacky, but I'd rather
+        //  fix it up here than figure out how to
+        //  fix Prism's markdown highlighter
 
-    html.replace(wickedPattern, goodReplacement)
+    if(language === 'markdown'){
+        let wickedPattern=/<\/span>\n<\/span>/g
+        let goodReplacement='</span></span>\n'
+        html = html.replace(wickedPattern, goodReplacement)
+    }
 
     let hasHighlightNumbers = split.length > 0;
     let highlights = new HighlightLinesGroup(split.join("/"), "/");
