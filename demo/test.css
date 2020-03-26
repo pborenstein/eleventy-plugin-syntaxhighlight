@@ -7,13 +7,20 @@
 }
 
 /* allow highlighting empty lines */
+
 .highlight-line:empty:before {
-  content: " ";
+  content: "x";
 }
 
-.highlight-line:not(:last-child) {
+.highlight-line:empty {
   min-width: 100%;
 }
-.highlight-line .highlight-line:not(:last-child) {
+
+/* .highlight-line:not(:last-child) {
+  min-width: 100%;
+} */
+
+/* .highlight-line .highlight-line:not(:last-child) {
   min-width: 0;
-}
+} */
+

@@ -25,6 +25,23 @@ tock`
 let bar = `times up`
 ```
 
+markdown
+
+``` markdown
+| State         | Capital |
+| :------------ | :------ |
+| New York      | Albany  |
+| Nebraska      | Lincoln |
+| New Hampshire | Concord |
+```
+
+text with blank lines
+
+``` text/2
+this is line one
+
+this is line three
+```
 
 
 a json thing

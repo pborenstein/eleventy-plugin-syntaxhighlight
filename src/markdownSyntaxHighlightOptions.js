@@ -32,6 +32,11 @@ module.exports = function(options = {}) {
       html = Prism.highlight(str, PrismLoader(language), language);
     }
 
+    let wickedPattern=/<\/span>\n<\/span>/g
+    let goodReplacement='</span></span>\n'
+
+    html.replace(wickedPattern, goodReplacement)
+
     let hasHighlightNumbers = split.length > 0;
     let highlights = new HighlightLinesGroup(split.join("/"), "/");
     let lines = html.split("\n").slice(0, -1); // The last line is empty.
