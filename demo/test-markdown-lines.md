@@ -10,7 +10,7 @@
 
 
 
-Backquotes
+Backquotes (`js/2`)
 
 ``` js/2
 let foo = `tick tock`
@@ -25,9 +25,9 @@ tock`
 let bar = `times up`
 ```
 
-markdown
+markdown/1,3-5
 
-``` markdown
+``` markdown/2-4
 | State         | Capital |
 | :------------ | :------ |
 | New York      | Albany  |
